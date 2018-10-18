@@ -16,7 +16,6 @@ class MovieFilters extends Component {
     const url = "https://api.themoviedb.org/3/genre/movie/list?api_key=";
     const lang = "&language=en-us";
     const requestUrl = `${url}${apiKey}${lang}`;
-    console.log(requestUrl);
     this.setState({ isLoading: true });
     axios
       .get(requestUrl)
@@ -32,7 +31,6 @@ class MovieFilters extends Component {
       );
   }
   handleStartYearChange = ({ currentTarget: years }) => {
-    console.log(years.value);
     this.setState({
       startYear: years.value
     });
@@ -43,10 +41,9 @@ class MovieFilters extends Component {
     });
   };
   handleGenreChange = ({ currentTarget: genre }) => {
-    console.log(genre.value);
-    // this.setState({
-    //   selectedGenre: genre
-    // });
+    this.setState({
+      selectedGenre: genre
+    });
   };
   render() {
     const { genres, isLoading, error, startYear } = this.state;
