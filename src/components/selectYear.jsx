@@ -11,7 +11,7 @@ const SelectYear = ({
   const fillRange = (start, end) => {
     return Array(end - start + 1)
       .fill()
-      .map((__items, index) => start + index);
+      .map((__, index) => start + index);
   };
 
   const findEndYearsRange = () => {
