@@ -9,17 +9,17 @@ const SelectYear = ({
   const today = new Date();
   const currentYear = today.getFullYear();
   const fillRange = (start, end) => {
-    return Array(end - start + 1)
+    return Array(start - end + 1)
       .fill()
-      .map((__, index) => start + index);
+      .map((__, index) => start - index);
   };
 
   const findEndYearsRange = () => {
     if (!startYear) return;
     const startYearNum = Number(startYear);
-    return fillRange(startYearNum, currentYear);
+    return fillRange(currentYear, startYearNum);
   };
-  const allYears = fillRange(1920, currentYear);
+  const allYears = fillRange(currentYear, 1920);
   const endYears = findEndYearsRange();
   return (
     <div>

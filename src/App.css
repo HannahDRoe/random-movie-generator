@@ -30,3 +30,7 @@
     transform: rotate(360deg);
   }
 }
+#movieOverview {
+  width: 50%;
+  margin: 20px auto;
+}
